@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Ochiroo from '../public/ochiroo.png';
-import Line from '../public/line.png';
 import { HiArrowNarrowLeft } from "react-icons/hi";
 import { useRouter } from "next/router";
 
@@ -31,12 +29,12 @@ export default function Home() {
 </nav>
 
       <div className="flex justify-center">
-        <Image className="animate-bounce ml-6 rounded-full mt-20" src={Ochiroo} width={250} height={250} alt="Picture of the author" object-cover/>
+        <img className="animate-bounce ml-6 rounded-full mt-20" src="/ochiroo.png" width={250} height={250} alt="Picture of the author" object-cover/>
       </div>
 
       <div>
         <p className="flex justify-center mt-6 font-style: italic text-5xl">About me</p>
-        <div><Image className="mt-5" src={Line}/></div>
+        <div><img className="mt-5" src="/line.png"/></div>
         <div className="bg-amber-50 rounded-lg p-5 border-4 w-1/2 mt-10 ml-10 text-2xl">
         <p>Highly skilled and motivated full-stack developer with over 5 years of
             experience in web development, specializing in React, Node.js, and
