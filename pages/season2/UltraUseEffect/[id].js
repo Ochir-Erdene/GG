@@ -88,7 +88,7 @@ export default function ItemDetail() {
 
   return (
     <div className={`min-h-screen bg-gray-50 py-10 px-6 relative ${isModalOpen ? "overflow-hidden" : ""}`}>
-      {/* Blurred Background Overlay */}
+
       {isModalOpen && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-md z-10"></div>
       )}

@@ -133,7 +133,7 @@ export default function News() {
                 <div
                   className={`${
                     grid
-                      ? "grid grid-cols-4 gap-4 m-5"
+                      ? "grid grid-cols-4 gap-4 m-5 flex "
                       : "flex flex-col space-y-4 m-5"
                   }`}
                 >
