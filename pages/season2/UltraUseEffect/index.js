@@ -138,13 +138,13 @@ export default function News() {
                   }`}
                 >
                   {items.map((item) => (
-                    <div key={item.id} className="border rounded-xl pl-3 cursor-pointer hover:scale-105 hover:border-black transition"
+                    <div key={item.id} className="border rounded-xl p-3 cursor-pointer hover:scale-105 hover:border-black transition"
                     onClick={() => router.push(`/season2/UltraUseEffect/${item.id}`)}>
                       {item.images && item.images.length > 0 && (
                         <img
-                          className="w-full h-[300px] object-contain"
-                          src={item.images[0]}
-                          alt={item.name}
+                        className="w-full h-[300px] object-cover rounded-lg"
+                        src={item.images[0]}
+                        alt={item.name}
                         />
                       )}
                       <h1 className="font-bold text-xl mb-3 mt-3">
