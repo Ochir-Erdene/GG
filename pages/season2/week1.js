@@ -1,11 +1,16 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { HiArrowNarrowLeft } from "react-icons/hi";
 
 export default function Home(){
+    const router = useRouter();
     const [count, setCount] = useState(0);
     const darah = () => setCount(count + 1);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return(
+    <div>
+        <div className="ml-3 w-full mt-6  absolute"><HiArrowNarrowLeft onClick={() => {router.push("/season2/router")}} className="w-[30px] h-[30px] fill-black hover:fill-gray-400 cursor-pointer"/></div>
         <div className="w-full h-screen bg-gray-300 pt-20">
             <div className="w-[1650px] ml-3 h-12 flex items-center justify-center  bg-blue-700">
                 <p className="text-white text-xl">Nest high school</p>
@@ -29,5 +34,6 @@ export default function Home(){
                 </div>
             </div>
         </div>
+    </div>
     );
 }
