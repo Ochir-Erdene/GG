@@ -90,7 +90,7 @@ export default function ItemDetail() {
     <div className={`min-h-screen bg-gray-50 py-10 px-6 relative ${isModalOpen ? "overflow-hidden" : ""}`}>
 
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-md z-10"></div>
+        <div className="fixed inset-0 backdrop-blur-md"></div>
       )}
 
       <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6 relative z-20">
@@ -109,9 +109,16 @@ export default function ItemDetail() {
         )}
 
         {isModalOpen && (
-          <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div onClick={() => setIsModalOpen(false)} className="fixed inset-0 flex bg-black/50 items-center justify-center z-50">
+            {/* <img
+          src="/close.png"
+          width="25"
+          height="25"
+          alt="close"
+          className="object-cover rounded-xl "
+        /> */}
             <div className="bg-black p-4 rounded-lg shadow-lg relative ">
-              <img src={item.images[0]} alt={item.name} onClick={() => setIsModalOpen(false)} className="w-full h-[500px] rounded-md hover:scale-105 transition"/>
+              <img src={item.images[0]} alt={item.name} onClick={() => setIsModalOpen(false)} className="w-full h-[500px] rounded-md"/>
             </div>
           </div>
         )}
@@ -144,4 +151,3 @@ export default function ItemDetail() {
     </div>
   );
 }
-

@@ -27,7 +27,6 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-col items-center mt-8 group cursor-pointer ">
-                {/* <Image className="ml-2.5 mt-8" src={List} width={25} height={25}/> */}
                 <svg xmlns="http://www.w3.org/2000/svg" height="18px" width="18px" viewBox="0 0 487.3 487.3" className="fill-slate-500 group-hover:fill-slate-300">
                     <g>
                         <g>
