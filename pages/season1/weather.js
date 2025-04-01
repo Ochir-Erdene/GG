@@ -1,11 +1,11 @@
 import Image from "next/image";
-import Wind from '../public/wind-icon.webp'
-import Weather from '../public/weather.png'
-import Sun from '../public/sun.png'
-import Cloud from '../public/cloud.png'
-import Moon from '../public/moon.png'
-import Lightning from '../public/lightning.png'
-import Raining from '../public/raining.png'
+// import Wind from '../public/wind-icon.webp'
+// import Weather from '../public/weather.png'
+// import Sun from '../public/sun.png'
+// import Cloud from '../public/cloud.png'
+// import Moon from '../public/moon.png'
+// import Lightning from '../public/lightning.png'
+// import Raining from '../public/raining.png'
 import { useRouter } from "next/router";
 
 
@@ -19,10 +19,10 @@ export default function Home() {
             <div className="w-full h-full rounded-3xl bg-slate-700 col-span-1 flex flex-col items-center p-4">
                 
                 <div className="w-12 h-12 rounded-2xl bg-slate-500 flex items-center justify-center cursor-pointer">
-                <Image onClick={() => {router.push("/")}} src={Wind} width={35} height={35}/>
+                <Image onClick={() => {router.push("/")}} src="/wind-icon.webp"width={35} height={35}/>
                 </div>
                 <div className="cursor-pointer">
-                <Image className="ml-2.5 mt-8 "  src={Weather} width={45} height={45}/>
+                <Image className="ml-2.5 mt-8 "  src="/weather.png" width={45} height={45}/>
                 <p className="text-slate-300 font-bold">Weather</p>
                 </div>
 
@@ -52,7 +52,7 @@ export default function Home() {
                 {/* div 2 */}
             <div className="w-full col-span-7 grid-rows-3 gap-7">
                <div className="w-full min-h-64 relative">
-                    <Image src={Sun} width={200} height={200} className="absolute right-12 top-6"/>
+                    <Image src="/sun.png" width={200} height={200} className="absolute right-12 top-6"/>
                     <div className="absolute left-0 top-0 p-8">
                         <h1 className="text-slate-300 font-extrabold text-5xl">Ulaanbaatar</h1>
                         <h1 className="mt-2 ml-1 text-slate-500">Chance of snow: 0%</h1>
@@ -67,7 +67,7 @@ export default function Home() {
                 <div className="w-full h-5/6 mt-5 grid grid-flow-col">
                     <div className="w-full h-full flex flex-col items-center justify-between border-r border-slate-500">
                         <h1 className="text-bold text-slate-400 font-extrabold">6:00 AM</h1>
-                        <Image src={Moon}width={80} height={80}/>
+                        <Image src="/moon.png" width={80} height={80}/>
                         <h1 className="text-xl text-slate-300 font-extrabold">-12°</h1>
                     </div>
                 </div>
@@ -75,7 +75,7 @@ export default function Home() {
                 <div className="w-full h-5/6 mt-5 grid grid-flow-col">
                     <div className="w-full h-full flex flex-col items-center justify-between border-r border-slate-500">
                         <h1 className="text-bold text-slate-400 font-extrabold">9:00 AM</h1>
-                        <Image src={Cloud}width={80} height={80}/>
+                        <Image src="/sun.png" width={80} height={80}/>
                         <h1 className="text-xl text-slate-300 font-extrabold">-10°</h1>
                     </div>
                 </div>
@@ -83,7 +83,7 @@ export default function Home() {
                 <div className="w-full h-5/6 mt-5 grid grid-flow-col">
                     <div className="w-full h-full flex flex-col items-center justify-between border-r border-slate-500">
                         <h1 className="text-bold text-slate-400 font-extrabold">12:00 PM</h1>
-                        <Image src={Sun} width={80} height={80}/>
+                        <Image src="/sun.png" width={80} height={80}/>
                         <h1 className="text-xl text-slate-300 font-extrabold">-3°</h1>
                     </div>
                 </div>
@@ -91,7 +91,7 @@ export default function Home() {
                 <div className="w-full h-5/6 mt-5 grid grid-flow-col">
                     <div className="w-full h-full flex flex-col items-center justify-between border-r border-slate-500">
                         <h1 className="text-bold text-slate-400 font-extrabold">3:00 PM</h1>
-                        <Image src={Sun} width={80} height={80}/>
+                        <Image src="/sun.png" width={80} height={80}/>
                         <h1 className="text-xl text-slate-300 font-extrabold">3°</h1>
                     </div>
                 </div>
@@ -99,7 +99,7 @@ export default function Home() {
                 <div className="w-full h-5/6 mt-5 grid grid-flow-col">
                     <div className="w-full h-full flex flex-col items-center justify-between border-r border-slate-500">
                         <h1 className="text-bold text-slate-400 font-extrabold">6:00 PM</h1>
-                        <Image src={Cloud} width={80} height={80}/>
+                        <Image src="/cloud.png" width={80} height={80}/>
                         <h1 className="text-xl text-slate-300 font-extrabold">-5°</h1>
                     </div>
                 </div>
@@ -107,7 +107,7 @@ export default function Home() {
                 <div className="w-full h-5/6 mt-5 grid grid-flow-col">
                     <div className="w-full h-full flex flex-col items-center justify-between">
                         <h1 className="text-bold text-slate-400 font-extrabold">9:00 PM</h1>
-                        <Image src={Moon} width={80} height={80}/>
+                        <Image src="/moon.png" width={80} height={80}/>
                         <h1 className="text-xl text-slate-300 font-extrabold">-14°</h1>
                     </div>
                 </div>
@@ -160,7 +160,7 @@ export default function Home() {
                     <div className="w-full h-full border-b border-slate-400 flex items-center justify-between">
                        <div className="w-[50%] h-[45%] flex justify-between items-center">
                           <p className="text-slate-400">Today</p>
-                          <Image src={Sun} width={40} height={10}/>
+                          <Image src="/sun.png" width={40} height={10}/>
                        </div>
                        <div className="w-[50%] h-[45%] flex items-center">
                           <p className="text-slate-200 font-extrabold ml-3">Sunny</p>
@@ -172,7 +172,7 @@ export default function Home() {
                     <div className="w-full h-full border-b border-slate-400 flex items-center justify-between">
                        <div className="w-[50%] h-[45%] flex justify-between items-center">
                           <p className="text-slate-400">Tue</p>
-                          <Image src={Sun} width={40} height={10}/>
+                          <Image src="/sun.png" width={40} height={10}/>
                        </div>
                        <div className="w-[50%] h-[45%] flex items-center">
                           <p className="text-slate-200 font-extrabold ml-3">Sunny</p>
@@ -184,7 +184,7 @@ export default function Home() {
                     <div className="w-full h-full border-b border-slate-400 flex items-center justify-between">
                        <div className="w-[50%] h-[45%] flex justify-between items-center">
                           <p className="text-slate-400">Wed</p>
-                          <Image src={Cloud} width={40} height={10}/>
+                          <Image src="/cloud.png" width={40} height={10}/>
                        </div>
                        <div className="w-[50%] h-[45%] flex items-center">
                           <p className="text-slate-200 font-extrabold ml-3">Cloudy</p>
@@ -196,7 +196,7 @@ export default function Home() {
                     <div className="w-full h-full border-b border-slate-400 flex items-center justify-between">
                        <div className="w-[50%] h-[45%] flex justify-between items-center">
                           <p className="text-slate-400">Thu</p>
-                          <Image src={Cloud} width={40} height={10}/>
+                          <Image src="/cloud.png" width={40} height={10}/>
                        </div>
                        <div className="w-[50%] h-[45%] flex items-center">
                           <p className="text-slate-200 font-extrabold ml-3">Cloudy</p>
@@ -208,7 +208,7 @@ export default function Home() {
                     <div className="w-full h-full border-b border-slate-400 flex items-center justify-between">
                        <div className="w-[50%] h-[45%] flex justify-between items-center">
                           <p className="text-slate-400">Fri</p>
-                          <Image src={Sun} width={40} height={10}/>
+                          <Image src="/sun.png" width={40} height={10}/>
                        </div>
                        <div className="w-[50%] h-[45%] flex items-center">
                           <p className="text-slate-200 font-extrabold ml-3">Sunny</p>
@@ -220,7 +220,7 @@ export default function Home() {
                     <div className="w-full h-full border-b border-slate-400 flex items-center justify-between">
                        <div className="w-[50%] h-[45%] flex justify-between items-center">
                           <p className="text-slate-400">Sat</p>
-                          <Image src={Raining} width={40} height={10}/>
+                          <Image src="/raining.png" width={40} height={10}/>
                        </div>
                        <div className="w-[50%] h-[45%] flex items-center">
                           <p className="text-slate-200 font-extrabold ml-3">Sunny</p>
@@ -232,7 +232,7 @@ export default function Home() {
                     <div className="w-full h-full flex items-center justify-between">
                        <div className="w-[50%] h-[45%] flex justify-between items-center">
                           <p className="text-slate-400">Sun</p>
-                          <Image src={Lightning} width={40} height={10}/>
+                          <Image src="/lightning.png" width={40} height={10}/>
                        </div>
                        <div className="w-[50%] h-[45%] flex items-center">
                           <p className="text-slate-200 font-extrabold ml-3">Sunny</p>

@@ -11,7 +11,7 @@ export default function Home() {
         <div className="sm:flex items-center justify-around">
         <div className="ml-12 w-full  absolute"><HiArrowNarrowLeft onClick={() => {router.push("/")}} className="w-[30px] h-[30px] fill-white hover:fill-slate-300 cursor-pointer"/></div> 
 
-          <a onClick={() => {router.push("cv")}} className="text-amber-50 text-3xl font-bold p-3">Ochir-Erdene</a>
+          <a onClick={() => {router.push("/season1/cv")}} className="text-amber-50 text-3xl font-bold p-3 cursor-pointer">Ochir-Erdene</a>
 
           <ul className="text-gray-400 sm:self-center text-xl border-t sm:border-none">
             <li className="sm:inline-block">
