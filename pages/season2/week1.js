@@ -16,7 +16,7 @@ export default function Home() {
     <div>
       <div className="ml-3 w-full mt-6 absolute">
         <HiArrowNarrowLeft
-          onClick={() => router.push("/season2/router")}
+          onClick={() => router.push("/")}
           className="w-[30px] h-[30px] fill-black hover:fill-gray-400 cursor-pointer"
         />
       </div>

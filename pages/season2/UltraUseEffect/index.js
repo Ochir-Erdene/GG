@@ -92,7 +92,7 @@ export default function News() {
       <div>
         <div className="ml-3 mt-2 absolute">
           <HiArrowNarrowLeft
-            onClick={() => router.push("/season2/router")}
+            onClick={() => router.push("/")}
             className="w-[30px] h-[30px] fill-black hover:fill-gray-400 cursor-pointer"
           />
         </div>

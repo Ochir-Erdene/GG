@@ -110,13 +110,6 @@ export default function ItemDetail() {
 
         {isModalOpen && (
           <div onClick={() => setIsModalOpen(false)} className="fixed inset-0 flex bg-black/50 items-center justify-center z-50">
-            {/* <img
-          src="/close.png"
-          width="25"
-          height="25"
-          alt="close"
-          className="object-cover rounded-xl "
-        /> */}
             <div className="bg-black p-4 rounded-lg shadow-lg relative ">
               <img src={item.images[0]} alt={item.name} onClick={() => setIsModalOpen(false)} className="w-full h-[500px] rounded-md"/>
             </div>

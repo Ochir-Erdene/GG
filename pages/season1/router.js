@@ -25,10 +25,10 @@ export default function Home() {
         <div className="text-center text-xl font-bold text-gray-200">Ochir-Erdene</div>
         <p className="text-center text-gray-400 text-sm">Nest High School Student, 11a</p>
         <nav className="flex flex-col space-y-4">
-          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => router.push("/")} className="flex items-center space-x-3 p-3 rounded-lg bg-gray-600 transition-all">
+          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => router.push("/")} className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-600 transition-all">
             <FaHome /> <span>All</span>
           </motion.button>
-          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => router.push("/season1/router")} className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-600">
+          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => router.push("/season1/router")} className="bg-gray-600 flex items-center space-x-3 p-3 rounded-lg">
             <FaCogs /> <span>Season1</span>
           </motion.button>
           <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => router.push("/season2/router")} className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-600">
@@ -38,25 +38,25 @@ export default function Home() {
       </aside>
 
       <main className="flex-1 p-12">
-        <h1 className="text-5xl font-extrabold text-center text-white mb-8 tracking-wider uppercase">
-          All My Tasks
+        <h1 className="text-5xl font-extrabold text-center text-gray-300 mb-8 tracking-wider uppercase">
+        Season1 all My Tasks
         </h1>
         <motion.div 
           initial="initial"
           animate="animate"
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {["cv", "weather", "filter", "grid", "bieDaalt", "week1", "UltraUseEffect"].map((task, index) => (
+          {["cv", "weather", "filter", "grid", "bieDaalt"].map((task) => (
             <motion.button 
               key={task}
-              onClick={() => navigateTo(`/season${index < 5 ? 1 : 2}/${task}`)} 
+              onClick={() => navigateTo(`/season1/${task}`)} 
               className={buttonClasses}
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
             >
               <motion.img
-                src={`/${task === "week1" ? "Nest" : task === "UltraUseEffect" ? "api" : task}.png`}
+                src={`/${task}.png`}
                 width="400"
                 height="250"
                 alt={task}
@@ -65,7 +65,7 @@ export default function Home() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
               />
-              <span className="text-xl font-semibold capitalize">{task.replace("bieDaalt", "Bie Daalt").replace("week1", "Nest").replace("UltraUseEffect", "UseEffect")}</span>
+              <span className="text-xl font-semibold capitalize">{task.replace("bieDaalt", "Bie Daalt")}</span>
             </motion.button>
           ))}
         </motion.div>

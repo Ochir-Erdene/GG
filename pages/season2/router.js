@@ -1,4 +1,6 @@
 import { useRouter } from "next/router";
+import { FaHome, FaCogs } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const router = useRouter();
@@ -7,70 +9,67 @@ export default function Home() {
     router.push(path);
   };
 
-  const buttonClasses =
-  "w-[425px] h-[425px] bg-gray-200 rounded-3xl shadow-lg transition-transform transform hover:scale-105 hover:bg-neutral-300 hover:text-white flex justify-center items-center p-4";
-  
-  return (
-    <div className="w-full min-h-screen bg-gradient-to-r from-yellow-700 to-neutral-400 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 p-8 gap-8">
-      <div>
-      <button
-        onClick={() => navigateTo("/")}
-        className={`${buttonClasses} flex flex-col`}
-        aria-label="Season 1"
-      >
-        <span className="text-xl font-semibold text-gray-800 mt-2">Season 1</span>
-      </button>
-      </div>
+  const buttonVariants = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    hover: { scale: 1.1, transition: { duration: 0.3 } },
+    tap: { scale: 0.9 },
+  };
 
-      <button
-        onClick={() => navigateTo("/season2/week1")}
-        className={`${buttonClasses} flex flex-col`}
-        aria-label="Nest"
-      >
-        <img
-          src="/Nest.png"
-          width="400"
-          height="250"
-          alt="Weather2"
-          className="object-cover rounded-xl"
-        />
-        <span className="text-xl font-semibold text-gray-800 mt-2">Nest</span>
-      </button>
-      <button
-        onClick={() => navigateTo("/season2/UltraUseEffect")}
-        className={`${buttonClasses} flex flex-col`}
-        aria-label="UseEffect/Bie daalt"
-      >
-        <img
-          src="/filter.png"
-          width="400"
-          height="250"
-          alt="Weather2"
-          className="object-cover rounded-xl"
-        />
-        <span className="text-xl font-semibold text-gray-800 mt-2">UseEffect / Bie daalt</span>
-      </button>
-      <button
-        onClick={() => navigateTo("")}
-        className={`${buttonClasses} flex flex-col`}
-        aria-label="Grid"
-      >
-        <span className="text-xl font-semibold text-gray-800 mt-2">Coming soon ...</span>
-      </button>
-      <button
-        onClick={() => navigateTo("")}
-        className={`${buttonClasses} flex flex-col`}
-        aria-label="Grid"
-      >
-        <span className="text-xl font-semibold text-gray-800 mt-2">Coming soon ...</span>
-      </button>
-      <button
-        onClick={() => navigateTo("")}
-        className={`${buttonClasses} flex flex-col`}
-        aria-label="Grid"
-      >
-        <span className="text-xl font-semibold text-gray-800 mt-2">Coming soon ...</span>
-      </button>
+  const buttonClasses =
+    "w-full sm:w-[300px] h-[200px] bg-gradient-to-r from-gray-900 to-gray-700 text-white rounded-2xl shadow-2xl flex flex-col items-center justify-center p-4 border border-gray-600 overflow-hidden";
+
+  return (
+    <div className="flex min-h-screen bg-gradient-to-r from-gray-900 to-gray-700 text-white">
+      <aside className="w-64 bg-gradient-to-b from-gray-900 to-gray-700 text-white flex flex-col p-6 space-y-6 shadow-xl border-r border-gray-600">
+        <div className="text-center text-xl font-bold text-gray-200">Ochir-Erdene</div>
+        <p className="text-center text-gray-400 text-sm">Nest High School Student, 11a</p>
+        <nav className="flex flex-col space-y-4">
+          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => router.push("/")} className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-600 transition-all">
+            <FaHome /> <span>All</span>
+          </motion.button>
+          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => router.push("/season1/router")} className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-600">
+            <FaCogs /> <span>Season1</span>
+          </motion.button>
+          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => router.push("")} className="flex items-center space-x-3 p-3 rounded-lg bg-gray-600 hover:bg-gray-600">
+            <FaCogs /> <span>Season2</span>
+          </motion.button>
+        </nav>
+      </aside>
+
+      <main className="flex-1 p-12">
+        <h1 className="text-5xl font-extrabold text-center text-white mb-8 tracking-wider uppercase">
+        Season2 all My Tasks
+        </h1>
+        <motion.div 
+          initial="initial"
+          animate="animate"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {["week1", "UltraUseEffect"].map((task, index) => (
+            <motion.button 
+              key={task}
+              onClick={() => navigateTo(`/season2/${task}`)} 
+              className={buttonClasses}
+              variants={buttonVariants}
+              whileHover="hover"
+              whileTap="tap"
+            >
+              <motion.img
+                src={`/${task === "week1" ? "Nest" : task === "UltraUseEffect" ? "api" : task}.png`}
+                width="400"
+                height="250"
+                alt={task}
+                className="object-cover rounded-xl m-2"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+              />
+              <span className="text-xl font-semibold capitalize">{task.replace("bieDaalt", "Bie Daalt").replace("week1", "Nest").replace("UltraUseEffect", "UseEffect")}</span>
+            </motion.button>
+          ))}
+        </motion.div>
+      </main>
     </div>
   );
 }

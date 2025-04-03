@@ -1,11 +1,4 @@
 import Image from "next/image";
-// import Wind from '../public/wind-icon.webp'
-// import Weather from '../public/weather.png'
-// import Sun from '../public/sun.png'
-// import Cloud from '../public/cloud.png'
-// import Moon from '../public/moon.png'
-// import Lightning from '../public/lightning.png'
-// import Raining from '../public/raining.png'
 import { useRouter } from "next/router";
 
 
@@ -15,14 +8,13 @@ export default function Home() {
         <div className="w-full h-screen bg-slate-950 grid grid-cols-12 gap-6 p-6 ">
             
 
-                {/* div 1  */}
             <div className="w-full h-full rounded-3xl bg-slate-700 col-span-1 flex flex-col items-center p-4">
                 
                 <div className="w-12 h-12 rounded-2xl bg-slate-500 flex items-center justify-center cursor-pointer">
                 <Image onClick={() => {router.push("/")}} src="/wind-icon.webp"width={35} height={35}/>
                 </div>
                 <div className="cursor-pointer">
-                <Image className="ml-2.5 mt-8 "  src="/weather.png" width={45} height={45}/>
+                <Image className="ml-2.5 mt-8 "  src="/wather.png" width={45} height={45}/>
                 <p className="text-slate-300 font-bold">Weather</p>
                 </div>
 
