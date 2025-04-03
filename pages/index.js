@@ -46,7 +46,7 @@ export default function Home() {
           animate="animate"
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {["cv", "weather", "filter", "grid", "bieDaalt", "week1", "UltraUseEffect"].map((task, index) => (
+          {["Cv", "weather", "filter", "grid", "bieDaalt", "week1", "UltraUseEffect"].map((task, index) => (
             <motion.button 
               key={task}
               onClick={() => navigateTo(`/season${index < 5 ? 1 : 2}/${task}`)} 
