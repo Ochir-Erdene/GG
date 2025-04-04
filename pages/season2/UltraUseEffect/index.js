@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { HiArrowNarrowLeft } from "react-icons/hi";
+import { motion } from "framer-motion";
 
 export default function News() {
   const [grid, setGrid] = useState(true); // State for toggling between grid and list views
@@ -70,16 +71,15 @@ export default function News() {
   if (!filteredData)
     return (
       <div className="w-full h-screen flex justify-center items-center ">
-<div class="flex flex-row gap-2">
-  <div class="w-4 h-4 rounded-full bg-red-500 animate-bounce"></div>
-  <div
-    class="w-4 h-4 rounded-full bg-red-500 animate-bounce [animation-delay:-.3s]"
-  ></div>
-  <div
-    class="w-4 h-4 rounded-full bg-red-500 animate-bounce [animation-delay:-.5s]"
-  ></div>
-</div>
-
+        <div className="flex flex-row gap-2">
+          <div className="w-4 h-4 rounded-full bg-red-500 animate-bounce"></div>
+          <div
+            className="w-4 h-4 rounded-full bg-red-500 animate-bounce [animation-delay:-.3s]"
+          ></div>
+          <div
+            className="w-4 h-4 rounded-full bg-red-500 animate-bounce [animation-delay:-.5s]"
+          ></div>
+        </div>
       </div>
     );
 
@@ -138,31 +138,32 @@ export default function News() {
                   }`}
                 >
                   {items.map((item) => (
-                    <div key={item.id} className="border rounded-xl p-3 flex cursor-pointer hover:scale-105 hover:border-black transition"
-                    onClick={() => router.push(`/season2/UltraUseEffect/${item.name}`)}>
+                    <motion.div key={item.id} className="border rounded-xl p-3 flex cursor-pointer hover:scale-105 hover:border-black transition"
+                      onClick={() => router.push(`/season2/UltraUseEffect/${item.name}`)}
+                      initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                       {item.images && item.images.length > 0 && (
                         <div>
                           <img
-                        className="w-[800px] h-[300px] object-cover rounded-lg"
-                        src={item.images[0]}
-                        alt={item.name}
-                        />
+                            className="w-[800px] h-[300px] object-cover rounded-lg"
+                            src={item.images[0]}
+                            alt={item.name}
+                          />
                         </div>
                       )}
                       <div className="ml-4">
-                      <h1 className="font-bold text-xl mb-3 mt-3">
-                        {item.name}
-                      </h1>
-                      {Object.entries(item).map(([key, value]) =>
-                        key !== "id" && key !== "images" && key !== "name" ? (
-                          <div key={key} className="flex mb-2 flex-col">
-                            <p className="font-bold">{key}: </p>
-                            <p>{value}</p>
-                          </div>
-                        ) : null
-                      )}
+                        <h1 className="font-bold text-xl mb-3 mt-3">
+                          {item.name}
+                        </h1>
+                        {Object.entries(item).map(([key, value]) =>
+                          key !== "id" && key !== "images" && key !== "name" ? (
+                            <div key={key} className="flex mb-2 flex-col">
+                              <p className="font-bold">{key}: </p>
+                              <p>{value}</p>
+                            </div>
+                          ) : null
+                        )}
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
