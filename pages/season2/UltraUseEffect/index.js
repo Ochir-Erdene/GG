@@ -133,20 +133,23 @@ export default function News() {
                 <div
                   className={`${
                     grid
-                      ? "grid grid-cols-4 gap-4 m-5 flex "
-                      : "flex flex-col space-y-4 m-5"
+                      ? "grid grid-cols-3 gap-4 m-5 "
+                      : "flex-col space-y-4 m-5 "
                   }`}
                 >
                   {items.map((item) => (
-                    <div key={item.id} className="border rounded-xl p-3 cursor-pointer hover:scale-105 hover:border-black transition"
-                    onClick={() => router.push(`/season2/UltraUseEffect/${item.id}`)}>
+                    <div key={item.id} className="border rounded-xl p-3 flex cursor-pointer hover:scale-105 hover:border-black transition"
+                    onClick={() => router.push(`/season2/UltraUseEffect/${item.name}`)}>
                       {item.images && item.images.length > 0 && (
-                        <img
-                        className="w-full h-[300px] object-cover rounded-lg"
+                        <div>
+                          <img
+                        className="w-[800px] h-[300px] object-cover rounded-lg"
                         src={item.images[0]}
                         alt={item.name}
                         />
+                        </div>
                       )}
+                      <div className="ml-4">
                       <h1 className="font-bold text-xl mb-3 mt-3">
                         {item.name}
                       </h1>
@@ -158,6 +161,7 @@ export default function News() {
                           </div>
                         ) : null
                       )}
+                      </div>
                     </div>
                   ))}
                 </div>

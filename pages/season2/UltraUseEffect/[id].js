@@ -40,7 +40,7 @@ export default function ItemDetail() {
         let foundItem = null;
         Object.values(fullData).forEach((category) => {
           if (!foundItem) {
-            foundItem = category.find((item) => item.id === id);
+            foundItem = category.find((item) => item.name === id);
           }
         });
 

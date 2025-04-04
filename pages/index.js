@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import { FaHome, FaCogs } from "react-icons/fa";
-import { motion } from "framer-motion";
 
 export default function Home() {
   const router = useRouter();
