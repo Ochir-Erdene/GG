@@ -34,6 +34,9 @@ export default function Home() {
           <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => router.push("/season2/router")} className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-600">
             <FaCogs /> <span>Season2</span>
           </motion.button>
+          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={() => router.push("/season3/router")} className="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-600">
+            <FaCogs /> <span>Season3</span>
+          </motion.button>
         </nav>
       </aside>
 

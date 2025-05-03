@@ -37,9 +37,6 @@ export default function News() {
                     <div className="flex justify-center">
                          <input type="text" placeholder="Search by name..." value={search} onChange={handleSearch}
                          className='w-11/12 rounded-xl shadow-xl p-3'/>
-
-
-
                     </div>
 
             {/* Display filtered gamers */}
