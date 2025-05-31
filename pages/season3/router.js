@@ -49,7 +49,7 @@ export default function Home() {
           animate="animate"
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {["toki"].map((task, index) => (
+          {["toki", "post", "s3"].map((task, index) => (
             <motion.button 
               key={task}
               onClick={() => navigateTo(`/season3/${task}`)} 

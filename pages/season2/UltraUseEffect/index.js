@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 import { motion } from "framer-motion";
+import axios from "axios";
 
 export default function News() {
   const [grid, setGrid] = useState(true); // State for toggling between grid and list views
@@ -73,12 +74,8 @@ export default function News() {
       <div className="w-full h-screen flex justify-center items-center ">
         <div className="flex flex-row gap-2">
           <div className="w-4 h-4 rounded-full bg-red-500 animate-bounce"></div>
-          <div
-            className="w-4 h-4 rounded-full bg-red-500 animate-bounce [animation-delay:-.3s]"
-          ></div>
-          <div
-            className="w-4 h-4 rounded-full bg-red-500 animate-bounce [animation-delay:-.5s]"
-          ></div>
+          <div className="w-4 h-4 rounded-full bg-red-500 animate-bounce [animation-delay:-.3s]"></div>
+          <div className="w-4 h-4 rounded-full bg-red-500 animate-bounce [animation-delay:-.5s]"></div>
         </div>
       </div>
     );
@@ -86,6 +83,12 @@ export default function News() {
   const isNoResults = Object.values(filteredData).every(
     (categoryItems) => categoryItems.length === 0
   );
+
+  const handelSubmit = () => {
+    axios.patch("https://mongol-api-rest.vercel.app/clothes", {
+      
+    });
+  };
 
   return (
     <div>
@@ -115,6 +118,8 @@ export default function News() {
             className="w-11/12 rounded-xl shadow-xl p-3"
           />
         </div>
+
+        <button className="border-2 border-orange-300 font-semibold rounded-lg w-[100px] h-[50px] bg-orange-300 text-white hover:text-orange-300 hover:bg-white transition-all">add</button>
       </div>
 
       {isNoResults ? (
@@ -138,9 +143,15 @@ export default function News() {
                   }`}
                 >
                   {items.map((item) => (
-                    <motion.div key={item.id} className="border rounded-xl p-3 flex cursor-pointer hover:scale-105 hover:border-black transition"
-                      onClick={() => router.push(`/season2/UltraUseEffect/${item.name}`)}
-                      initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+                    <motion.div
+                      key={item.id}
+                      className="border rounded-xl p-3 flex cursor-pointer hover:scale-105 hover:border-black transition"
+                      onClick={() =>
+                        router.push(`/season2/UltraUseEffect/${item.name}`)
+                      }
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                    >
                       {item.images && item.images.length > 0 && (
                         <div>
                           <img

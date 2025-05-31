@@ -49,13 +49,13 @@ export default function Home() {
           animate="animate"
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {["Cv", "weather", "filter", "grid", "bieDaalt", "week1", "UltraUseEffect", "toki"].map((task, index) => (
+          {["Cv", "weather", "filter", "grid", "bieDaalt", "week1", "UltraUseEffect", "toki", "post", "s3"].map((task, index) => (
             <motion.button 
               key={task}
               onClick={() => {
                 let season = 1;
                 if (["week1", "UltraUseEffect"].includes(task)) season = 2;
-                else if (task === "toki") season = 3;
+                else if (task === "toki" || task === "post" || task === "s3") season = 3;
                 navigateTo(`/season${season}/${task}`);
               }} 
               className={buttonClasses}
