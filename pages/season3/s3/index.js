@@ -75,7 +75,7 @@ export default function Home() {
               (item, index) => (
                 <div
                   key={index}
-                  onClick={() => router.push(`/season3/BieDaalt/${item.id}`)}
+                  onClick={() => router.push(`/season3/s3/${item.id}`)}
                   className="cursor-pointer bg-white p-4 rounded-xl border-2 border-gray-200 shadow-sm flex flex-col justify-between h-full"
                 >
                   <img

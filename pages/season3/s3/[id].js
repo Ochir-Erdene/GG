@@ -28,7 +28,7 @@ export default function ItemDetail() {
     <div className="p-4 ">
       <div className="flex">
         <HiArrowNarrowLeft
-          onClick={() => router.push("/season3/BieDaalt")}
+          onClick={() => router.push("/season3/s3")}
           className="mt-1 w-[20px] h-[20px] fill-black hover:fill-gray-400 cursor-pointer"
         />
         <h1 className="ml-2 text-xl font-bold mb-4">{item.ModelName}</h1>
